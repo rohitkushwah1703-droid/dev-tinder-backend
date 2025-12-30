@@ -2,7 +2,11 @@ const express = require("express");
 
 const app = express();
 
-app.use("test", (req, res) => {
+app.get("/user", (req, res) => {
+  res.send("Users from Server");
+});
+
+app.use("/test", (req, res) => {
   res.send("you are listing from server");
 });
 

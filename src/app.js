@@ -7,5 +7,5 @@ app.use("test", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Server is running successfully");
+  console.log("Server is running successfully changes");
 });

@@ -5,7 +5,9 @@ const authAdmin = async (req, res, next) => {
     const { token } = req?.cookies;
     console.log("token", token);
     if (!token) {
-      throw new Error("Token expired!!");
+      return res
+        .status(401)
+        .json({ message: "User is unauthorised!!  Please login" });
     }
     const decodeobj = await jwt.verify(token, "JWTTinder@123");
     const { _id } = decodeobj;
